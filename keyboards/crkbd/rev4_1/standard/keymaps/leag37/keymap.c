@@ -27,6 +27,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 // clang-format off
+#define LEAG37_BUILD_LAYER( \
+    K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, K13, K14, \
+    K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, \
+         K29, K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K40, \
+                        K41, K42, K43, K44, K45, K46 \
+    ) \
+    LAYOUT_split_3x6_3_ex2(\
+    K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, K13, K14, \
+    K15, K16, K17, K18, K19, K20, K21, K22, K23, K24, K25, K26, K27, K28, \
+         K29, K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K40, \
+                        K41, K42, K43, K44, K45, K46)
+
+#define LEAG37_DEFINE_LAYER(__layer, ...) [__layer] = LEAG37_BUILD_LAYER(__VA_ARGS__)
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    LEAG37_DEFINE_LAYER(BASE_QWERTY,
+    __LEAG37_R3_LEFT_3x6_EXT__, __LEAG37_QWERTY_R3_LEFT__, KC_TRNS, KC_TRNS, __LEAG37_QWERTY_R3_RIGHT__, __LEAG37_R3_RIGHT_3x6_EXT__,
+    __LEAG37_R2_LEFT_3x6_EXT__, __LEAG37_QWERTY_R2_LEFT__, KC_TRNS, KC_TRNS, __LEAG37_QWERTY_R2_RIGHT__, __LEAG37_R2_RIGHT_3x6_EXT__,
+    __LEAG37_R1_LEFT_3x6_EXT__, __LEAG37_QWERTY_R1_LEFT__, __LEAG37_QWERTY_R1_RIGHT__, __LEAG37_R1_RIGHT_3x6_EXT__,
+    __LEAG37_QWERTY_33THUMB_LEFT__, __LEAG37_QWERTY_33THUMB_RIGHT__
+    )
+};
+
+#if 0
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE_QWERTY] = LAYOUT_split_3x6_3(
@@ -77,6 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                   KC_LGUI, _______, KC_SPC, KC_ENT, _______, KC_RALT
                                                                   //`--------------------------'  `--------------------------'
                                                                   )};
+#endif
 // clang-format on
 
 LEAG37_KEY_OVERRIDES
