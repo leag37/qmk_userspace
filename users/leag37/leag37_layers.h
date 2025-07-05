@@ -74,6 +74,6 @@ enum ELeag37_Layers {
 #define __LEAG37_MEDIA_TOP__ __LEAG37_TRANS_5__
 #define __LEAG37_MEDIA_MID__ KC_MUTE, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
 #define __LEAG37_MEDIA_BOT__ __LEAG37_TRANS_5__
-#define __LEAG37_MEDIA_THUMB_RIGHT__ KC_MPLY, KC_MSTP
+#define __LEAG37_MEDIA_THUMB32_RIGHT__ KC_MPLY, KC_MSP
 
 // Note for overrides -- put ESC as an override for shift on enter

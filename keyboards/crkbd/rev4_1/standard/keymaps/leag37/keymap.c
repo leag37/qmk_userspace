@@ -22,7 +22,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    include "leag37.h"
 #endif
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT_split_3x6_3(
+#if __has_include("g/keymap_combo.h")
+#    include "g/keymap_combo.h"
+#endif
+
+// clang-format off
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+    [BASE_QWERTY] = LAYOUT_split_3x6_3(
                                                                   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
                                                                   KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
                                                                   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -70,6 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT_split
                                                                   KC_LGUI, _______, KC_SPC, KC_ENT, _______, KC_RALT
                                                                   //`--------------------------'  `--------------------------'
                                                                   )};
+// clang-format on
+
+LEAG37_KEY_OVERRIDES
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
