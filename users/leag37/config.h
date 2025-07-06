@@ -5,4 +5,7 @@
 
 #define CHORDAL_HOLD
 
+// Flow tap
+#define FLOW_TAP_TERM 150
+
 // Chords
