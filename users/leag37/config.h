@@ -3,4 +3,6 @@
 // Enable caps word when we double tap shift
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
+#define CHORDAL_HOLD
+
 // Chords

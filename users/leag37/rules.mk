@@ -1,4 +1,4 @@
-SRC += leag37.c
+SRC += leag37.c leag37_layers.c
 
 # Basic feature enabling
 KEY_OVERRIDE_ENABLE = yes
