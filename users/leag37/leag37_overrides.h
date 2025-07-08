@@ -11,7 +11,7 @@
         const key_override_t key_override_unds      = ko_make_basic(MOD_MASK_SHIFT, KC_UNDS, KC_PIPE);           \
         const key_override_t key_override_enter     = ko_make_basic(MOD_MASK_SHIFT, LT(SYMBOL, KC_ENT), KC_ESC); \
         const key_override_t key_override_slash     = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_BSLS);           \
-        const key_override_t key_override_backspace = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+        const key_override_t key_override_backspace = ko_make_basic(MOD_MASK_SHIFT, LT(NUMBER, KC_BSPC), KC_DEL);
 
 #    define LEAG37_DEFINE_OVERRIDES const key_override_t *key_overrides[] = {&key_override_lparen, &key_override_rparen, &key_override_comma, &key_override_period, &key_override_unds, &key_override_enter, &key_override_slash, &key_override_backspace};
 
